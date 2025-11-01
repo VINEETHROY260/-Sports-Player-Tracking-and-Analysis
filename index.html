@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Welcome</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-wrapper">
+            <div class="login-card">
+                <div class="header">
+                    <div class="logo-wrapper">
+                        <div class="logo-icon">🚀</div>
+                        <h1 class="logo">Welcome Back</h1>
+                    </div>
+                    <p class="subtitle">Sign in to access your account</p>
+                </div>
+                
+                <form class="login-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="Enter your email"
+                                required
+                                autocomplete="email"
+                            >
+                            <span class="input-icon">✉️</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="password" 
+                                id="password" 
+                                name="password" 
+                                placeholder="Enter your password"
+                                required
+                                autocomplete="current-password"
+                            >
+                            <span class="input-icon">🔒</span>
+                            <button type="button" class="toggle-password" id="togglePassword" aria-label="Toggle password visibility">
+                                👁️
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" id="rememberMe">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                    </div>
+                    
+                    <button type="submit" class="login-button" id="loginButton">
+                        <span class="button-text">Sign In</span>
+                        <span class="button-loader" id="buttonLoader"></span>
+                    </button>
+                    
+                    <div class="error-message" id="errorMessage"></div>
+                    <div class="success-message" id="successMessage"></div>
+                </form>
+                
+                <div class="divider">
+                    <span>or</span>
+                </div>
+                
+                <div class="social-login">
+                    <button type="button" class="social-button google">
+                        <span class="social-icon">🔵</span>
+                        Continue with Google
+                    </button>
+                    <button type="button" class="social-button github">
+                        <span class="social-icon">⚫</span>
+                        Continue with GitHub
+                    </button>
+                </div>
+                
+                <div class="signup-link">
+                    Don't have an account? <a href="#">Sign up</a>
+                </div>
+            </div>
+            
+            <div class="decoration-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+                <div class="shape shape-5"></div>
+            </div>
+            <div class="particles" id="particles"></div>
+            <div class="sparkles"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+

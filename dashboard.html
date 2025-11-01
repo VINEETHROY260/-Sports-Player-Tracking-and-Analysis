@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Performance Analyzer - Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1 class="logo">🏃 Sports Performance Analyzer</h1>
+                <button class="logout-btn" id="logoutBtn">Logout</button>
+            </div>
+        </header>
+
+        <main class="dashboard-main">
+            <div class="welcome-section">
+                <h2>Upload & Analyze Sports Video</h2>
+                <p>Upload a video of a sports person to get detailed performance analysis</p>
+            </div>
+
+            <div class="upload-section">
+                <div class="upload-card">
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-icon">📹</div>
+                        <h3>Drop video here or click to upload</h3>
+                        <p>Supports MP4, MOV, AVI (Max 500MB)</p>
+                        <input type="file" id="videoInput" accept="video/*" hidden>
+                        <button class="upload-btn" id="uploadBtn">Choose Video</button>
+                    </div>
+                    <div class="video-preview" id="videoPreview" style="display: none;">
+                        <video id="previewVideo" controls></video>
+                        <div class="video-info">
+                            <span id="videoName"></span>
+                            <button class="remove-video-btn" id="removeVideoBtn">Remove</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="analysis-section" id="analysisSection" style="display: none;">
+                <div class="analysis-controls">
+                    <button class="analyze-btn" id="analyzeBtn">
+                        <span class="btn-icon">🔍</span>
+                        <span>Start Analysis</span>
+                    </button>
+                    <select id="analysisType" class="analysis-select">
+                        <option value="cnn">CNN Analysis (Fast)</option>
+                        <option value="rnn">RNN Analysis (Detailed)</option>
+                        <option value="hybrid">Hybrid (CNN + RNN)</option>
+                    </select>
+                </div>
+
+                <div class="progress-section" id="progressSection" style="display: none;">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                    <p class="progress-text" id="progressText">Analyzing video...</p>
+                </div>
+
+                <div class="results-section" id="resultsSection" style="display: none;">
+                    <h3 class="results-title">📊 Analysis Report</h3>
+                    
+                    <div class="results-grid">
+                        <div class="result-card performance-card">
+                            <h4>Performance Metrics</h4>
+                            <div class="metric-item">
+                                <span class="metric-label">Speed Score:</span>
+                                <span class="metric-value" id="speedScore">-</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">Agility Score:</span>
+                                <span class="metric-value" id="agilityScore">-</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">Coordination:</span>
+                                <span class="metric-value" id="coordinationScore">-</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">Overall Rating:</span>
+                                <span class="metric-value overall" id="overallRating">-</span>
+                            </div>
+                        </div>
+
+                        <div class="result-card movement-card">
+                            <h4>Movement Analysis</h4>
+                            <div class="movement-list" id="movementList">
+                                <!-- Movement items will be added here -->
+                            </div>
+                        </div>
+
+                        <div class="result-card technique-card">
+                            <h4>Technique Breakdown</h4>
+                            <div class="technique-analysis" id="techniqueAnalysis">
+                                <!-- Technique analysis will be added here -->
+                            </div>
+                        </div>
+
+                        <div class="result-card recommendations-card">
+                            <h4>💡 Recommendations</h4>
+                            <ul class="recommendations-list" id="recommendationsList">
+                                <!-- Recommendations will be added here -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="charts-section">
+                        <div class="chart-card">
+                            <h4>Performance Timeline</h4>
+                            <canvas id="performanceChart"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <h4>Key Moments</h4>
+                            <div class="key-moments" id="keyMoments">
+                                <!-- Key moments will be added here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="download-report-btn" id="downloadReportBtn">📥 Download Full Report</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
+
